@@ -4,6 +4,7 @@
 .Rbuildignore
 .git
 .github
+docs
 renv
 Dockerfile
 docker-compose.yml

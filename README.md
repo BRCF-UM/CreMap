@@ -1,5 +1,11 @@
 # CreMAP
 
+Hosted application: <https://cremap.shinyapps.io/cremap/>
+
+Google Sites loading wrapper: <https://brcf-um.github.io/CreMap/>. This static
+GitHub Pages wrapper displays immediately while the hosted Shiny instance
+starts, then reveals CreMAP after its server connection is ready.
+
 Shiny application for **mouse and human** spleen single-cell RNA-seq: **side-by-side** gene expression (UMAP + mean by cell type), **MouseMine (MGI)** Cre driver lookup mapped onto mouse and human where symbols match, cell-type labeling, and **Wilcoxon** differential expression (mouse object preferred when both are loaded).
 
 ## Requirements

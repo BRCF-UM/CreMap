@@ -78,8 +78,23 @@ The upload and analysis features can consume substantial memory. Start by
 testing synthetic data on the default instance. A 2–4 GB instance is more
 appropriate for public Seurat/Cell Ranger uploads.
 
-## 5. Embed in Google Sites
+## 5. Publish the loading page with GitHub Pages
 
-In Google Sites choose **Insert > Embed > By URL** and use the shinyapps.io URL.
-A full-page embed works best for CreMAP's navigation and plots. Also provide a
-normal link that opens the application in a new tab.
+The static wrapper in `docs/index.html` appears immediately while shinyapps.io
+wakes the app, then removes its loading screen after CreMAP reports that its
+Shiny connection is ready.
+
+Configure GitHub Pages to deploy from the `docs` folder on the `main` branch.
+The public wrapper URL is:
+
+```text
+https://brcf-um.github.io/CreMap/
+```
+
+The `docs` folder is excluded from the shinyapps.io bundle by `.rscignore`.
+
+## 6. Embed in Google Sites
+
+In Google Sites choose **Pages > + > Full page embed** and use the GitHub Pages
+wrapper URL above. Also provide a normal link to the shinyapps.io application
+that opens in a new tab.

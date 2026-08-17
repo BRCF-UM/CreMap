@@ -219,25 +219,41 @@ plot_gb_locus <- function(loci, overlap, symbol = "") {
 ui <- page_navbar(
   title = "CreMAP",
   theme = bs_theme(version = 5, bootswatch = "flatly", primary = "#2c3e50"),
-  header = tags$div(
-    class = "border-bottom px-3 py-2",
+  header = tagList(
+    tags$script(HTML("
+      (function () {
+        function notifyCreMapReady() {
+          if (window.parent !== window) {
+            window.parent.postMessage({ type: 'cremap-ready' }, '*');
+          }
+        }
+
+        $(document).one('shiny:connected', notifyCreMapReady);
+        if (window.Shiny && Shiny.shinyapp && Shiny.shinyapp.isConnected()) {
+          notifyCreMapReady();
+        }
+      }());
+    ")),
     tags$div(
-      class = "d-flex flex-wrap align-items-center justify-content-between gap-3",
+      class = "border-bottom px-3 py-2",
       tags$div(
-        class = "text-muted small",
-        "Mouse & human spleen single-cell RNA-seq — pick a species below, then explore expression, ",
-        tags$a(href = "https://www.mousemine.org/mousemine", "MouseMine"),
-        " (MGI) Cre drivers, integration-locus browser, cell types, and differential expression."
-      ),
-      tags$div(
-        class = "d-flex align-items-center gap-2",
-        tags$span(class = "small fw-semibold text-nowrap", "Species"),
-        radioButtons(
-          "view_species",
-          label = NULL,
-          choices = c("Mouse" = "mouse", "Human" = "human"),
-          selected = "mouse",
-          inline = TRUE
+        class = "d-flex flex-wrap align-items-center justify-content-between gap-3",
+        tags$div(
+          class = "text-muted small",
+          "Mouse & human spleen single-cell RNA-seq — pick a species below, then explore expression, ",
+          tags$a(href = "https://www.mousemine.org/mousemine", "MouseMine"),
+          " (MGI) Cre drivers, integration-locus browser, cell types, and differential expression."
+        ),
+        tags$div(
+          class = "d-flex align-items-center gap-2",
+          tags$span(class = "small fw-semibold text-nowrap", "Species"),
+          radioButtons(
+            "view_species",
+            label = NULL,
+            choices = c("Mouse" = "mouse", "Human" = "human"),
+            selected = "mouse",
+            inline = TRUE
+          )
         )
       )
     )

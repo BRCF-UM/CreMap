@@ -1,0 +1,11 @@
+services:
+  cremap:
+    build: .
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./:/srv/shiny-server/CreMAP
+    environment:
+      SHINY_HOST: "0.0.0.0"
+      SHINY_PORT: "8787"
+      SHINY_LAUNCH_BROWSER: "false"

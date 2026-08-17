@@ -1,0 +1,32 @@
+Package: CreMAP
+Title: Shiny Single-Cell Explorer for Mouse Splenocytes with MGI Cre Integration
+Version: 0.1.0
+Authors@R: person("CreMAP", role = c("aut", "cre"))
+Description: Interactive exploration of mouse splenocyte scRNA-seq with MouseMine (MGI) Cre driver lookup.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    shiny (>= 1.8.0),
+    bslib (>= 0.6.0),
+    dplyr (>= 1.1.0),
+    plotly (>= 4.10.0),
+    httr2 (>= 1.0.0),
+    Seurat (>= 5.0.0),
+    SeuratObject (>= 5.0.0),
+    Matrix (>= 1.6.0),
+    DT (>= 0.31),
+    stats,
+    utils,
+    grDevices,
+    graphics
+Suggests:
+    renv,
+    BiocManager,
+    SingleCellExperiment,
+    SummarizedExperiment,
+    ExperimentHub,
+    TabulaMurisSenisData,
+    scRNAseq,
+    cellxgenedp,
+    zellkonverter
+LazyData: true

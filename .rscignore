@@ -1,0 +1,12 @@
+.DS_Store
+.Rhistory
+.Rprofile
+.Rbuildignore
+.git
+.github
+renv
+Dockerfile
+docker-compose.yml
+Makefile
+run_test.sh
+scripts

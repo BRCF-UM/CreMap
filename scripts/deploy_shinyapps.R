@@ -1,12 +1,12 @@
 #!/usr/bin/env Rscript
 ## Deploy CreMAP to shinyapps.io without placing credentials in this repository.
 ## Run with a vanilla R session so the deployment client is independent of renv:
-##   R --vanilla -f scripts/deploy_shinyapps.R
+##   Rscript --vanilla scripts/deploy_shinyapps.R
 
 ca <- commandArgs(trailingOnly = FALSE)
 fn <- sub("^--file=", "", grep("^--file=", ca, value = TRUE))
 if (length(fn) != 1L) {
-  stop("Run from the repo root: R --vanilla -f scripts/deploy_shinyapps.R", call. = FALSE)
+  stop("Run from the repo root: Rscript --vanilla scripts/deploy_shinyapps.R", call. = FALSE)
 }
 root <- normalizePath(file.path(dirname(fn), ".."))
 setwd(root)

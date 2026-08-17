@@ -53,7 +53,7 @@ script with vanilla R:
 ```bash
 export SHINYAPPS_ACCOUNT="YOUR_ACCOUNT"
 export SHINYAPPS_APP_NAME="cremap"
-R --vanilla -f scripts/deploy_shinyapps.R
+Rscript --vanilla scripts/deploy_shinyapps.R
 ```
 
 The application will be available at:
